@@ -27,7 +27,7 @@ const register = async (req, res) => {
         const salt = await bcrypt.genSalt();
         const passwordHash = await bcrypt.hash(password, salt);
 
-        const response = await uploadImage(imageBase64, 'Users-test');
+        const response = await uploadImage(imageBase64, 'Users');
         const imageUrl = response.secure_url;
 
         await userModel.create({
