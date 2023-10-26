@@ -42,7 +42,7 @@ const createPost = async (req, res) => {
 
         const user = await userModel.findById(userId);
 
-        const response = await uploadImage(imageBase64, 'Posts-test');
+        const response = await uploadImage(imageBase64, 'Posts');
         const imageUrl = response.secure_url;
 
         const newPost = await postModel.create({
